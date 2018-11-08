@@ -2,7 +2,7 @@
                       "http://www.w3.org/TR/html4/strict.dtd">
 <HTML>
 <HEAD>
-  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
   <TITLE>GNU Backgammon ID Decoder</title>
   <META NAME="author" CONTENT="Petr Kadlec">
   <META NAME="description" CONTENT="Decoder of Position and Match IDs from GNU Backgammon">
@@ -349,14 +349,13 @@
 
     echo "Position ID: <tt>$posid</tt>";
     if ($matchid) echo " Match ID: <tt>$matchid</tt>";
-    echo "<br>\n";
 
     echo "</span>";
 
     echo "</p>";
   }
 
-  $_GET = $HTTP_GET_VARS;
+  // $_GET = $HTTP_GET_VARS;
 
   if (isset($_GET['lang'])) {
     $lang = $_GET['lang'];
