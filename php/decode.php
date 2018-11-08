@@ -1,5 +1,17 @@
-<?
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+                      "http://www.w3.org/TR/html4/strict.dtd">
+<HTML>
+<HEAD>
+  <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=us-ascii">
+  <TITLE>GNU Backgammon ID Decoder</title>
+  <META NAME="author" CONTENT="Petr Kadlec">
+  <META NAME="description" CONTENT="Decoder of Position and Match IDs from GNU Backgammon">
+  <META NAME="keywords" CONTENT="gnubg GNU Backgammon Position Match ID matchid positionid">
+</HEAD>
+<BODY LANG=en>
+ <H1>GNU Backgammon ID Decoder</H1>
+ <p>
+<?php
 /*
  * decode_core.php -- PHP script to decode position and match ID
  *                    from GNU Backgammon
@@ -100,7 +112,7 @@
   }
 
   function print_image($image, $alt) {
-    echo "<img src=\"img/$image.png\" class=block alt=\"$alt\" />";
+    echo "<img src=\"img/$image.png\" class=block alt=\"$alt\">";
   }
 
   function print_point($point0, $point1, $color, $up) {
@@ -329,7 +341,7 @@
     echo "<p>";
 
     $pips = count_pips($board);
-    printf("Pip counts: Player on turn %d, the other player %d<br />\n", $pips[!$turn], $pips[$turn]);
+    printf("Pip counts: Player on turn %d, the other player %d<br>\n", $pips[!$turn], $pips[$turn]);
 
     /* position ID */
 
@@ -337,21 +349,20 @@
 
     echo "Position ID: <tt>$posid</tt>";
     if ($matchid) echo " Match ID: <tt>$matchid</tt>";
-    echo "<br />\n";
+    echo "<br>\n";
 
     echo "</span>";
 
     echo "</p>";
   }
 
-function decode_main() {
   $_GET = $HTTP_GET_VARS;
 
   if (isset($_GET['lang'])) {
     $lang = $_GET['lang'];
   }
   //putenv("LANG=" . $lang);
-  putenv("LANG=cs");
+  //putenv("LANG=cs");
 
   bindtextdomain("gnubg", "./locale");
   textdomain("gnubg");
@@ -432,7 +443,7 @@ function decode_main() {
       echo "<span class=positionid>";
       echo gettext("Match ID: ");
       echo "<tt>$match</tt>";
-      echo "<br />\n";
+      echo "<br>\n";
       echo "</span>";
       echo "</p>";
     }
@@ -495,6 +506,13 @@ function decode_main() {
       } else echo " (money session)<br>\n";
     }
   }
-}
-
 ?>
+
+ <hr>
+ <p><small>&copy; Petr Kadlec, 2004<br>
+           Based on <a href="http://www.gnu.org/software/gnubg/">GNU Backgammon 0.14-dev</a>,
+           (HTML Export version 1.152 by Joern Thyssen)
+    </small>
+
+</BODY>
+</HTML>
